@@ -1,0 +1,215 @@
+"use client";
+import { useState, useEffect, useMemo } from 'react';
+import { useAccount, useBalance, useReadContract, useWriteContract, useWaitForTransactionReceipt } from 'wagmi';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { parseEther, formatEther } from 'viem';
+import dynamic from 'next/dynamic';
+
+const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
+
+// ENDEREÇO DO SEU CONTRATO NA SEPOLIA
+const GBIT_ADDRESS = "0x692dFB8d2330E62578F0a58F29F637CD7fD518cA";
+
+const ABI = [
+  { name: "rate", type: "function", stateMutability: "view", inputs: [], outputs: [{type:"uint256"}] },
+  { name: "deposit", type: "function", stateMutability: "payable", inputs: [] },
+  { name: "withdraw", type: "function", stateMutability: "nonpayable", inputs: [{name: "amount", type: "uint256"}] }
+];
+
+export default function GbitExchangePro() {
+  const { address, isConnected } = useAccount();
+  const [series, setSeries] = useState([{ data: [] as any[] }]);
+  const [logs, setLogs] = useState<{msg: string, time: string, type: string}[]>([]);
+  
+  // LEITURA DE SALDOS
+  const { data: ethBalance } = useBalance({ address });
+  
+  const { data: gbitBalance, refetch: refetchGbit } = useBalance({ 
+    address, 
+    token: GBIT_ADDRESS as `0x${string}` 
+  });
+
+  const { data: contractEth, refetch: refetchEth } = useBalance({ 
+    address: GBIT_ADDRESS as `0x${string}` 
+  });
+
+  const { data: currentRate } = useReadContract({ 
+    address: GBIT_ADDRESS as `0x${string}`, 
+    abi: ABI, 
+    functionName: 'rate' 
+  });
+
+  const { data: hash, writeContract, isPending } = useWriteContract();
+  const { isSuccess } = useWaitForTransactionReceipt({ hash });
+
+  // FORMATADORES À PROVA DE NaN
+  const safeGbit = useMemo(() => {
+    if (!gbitBalance?.value) return "0.00";
+    return parseFloat(formatEther(gbitBalance.value)).toFixed(2);
+  }, [gbitBalance]);
+
+  const contractLiquidity = useMemo(() => {
+    if (!contractEth?.value) return "0.0000";
+    return parseFloat(formatEther(contractEth.value)).toFixed(4);
+  }, [contractEth]);
+
+  const userEth = useMemo(() => {
+    if (!ethBalance?.value) return "0.0000";
+    return parseFloat(formatEther(ethBalance.value)).toFixed(4);
+  }, [ethBalance]);
+  
+  const displayPrice = useMemo(() => {
+    const rate = currentRate ? Number(currentRate) : 0;
+    if (rate === 0) return 1001.88; 
+    return (23500000 / rate); 
+  }, [currentRate]);
+
+  // LOGS E REFRESH
+  useEffect(() => {
+    if (isSuccess) {
+      refetchEth();
+      refetchGbit();
+      addLog("Transação confirmada na Sepolia!", "success");
+    }
+  }, [isSuccess, refetchEth, refetchGbit]);
+
+  const addLog = (msg: string, type: string) => {
+    setLogs(prev => [{msg, time: new Date().toLocaleTimeString(), type}, ...prev.slice(0, 3)]);
+  };
+
+  // FUNÇÕES DE TRADE
+  const handleBuy = () => {
+    if (!isConnected) return;
+    writeContract({ 
+      address: GBIT_ADDRESS as `0x${string}`, 
+      abi: ABI, 
+      functionName: 'deposit', 
+      value: parseEther('0.002') 
+    });
+  };
+
+  const handleSell = () => {
+    if (!isConnected) return;
+    // Vende 0.5 GBIT
+    writeContract({ 
+      address: GBIT_ADDRESS as `0x${string}`, 
+      abi: ABI, 
+      functionName: 'withdraw', 
+      args: [parseEther('0.5')] 
+    });
+  };
+
+  // GRÁFICO
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSeries(prev => {
+        const lastData = prev[0].data;
+        const lastCandle = lastData[lastData.length - 1];
+        const now = new Date().getTime();
+
+        // Cria uma pequena oscilação aleatória de 0.1% a 0.5%
+        const volatility = (Math.random() - 0.5) * (displayPrice * 0.005);
+        const newOpen = lastCandle ? lastCandle.y[3] : displayPrice;
+        const newClose = newOpen + volatility;
+        const high = Math.max(newOpen, newClose) + Math.random();
+        const low = Math.min(newOpen, newClose) - Math.random();
+
+        const newData = [...lastData.slice(1), { x: now, y: [newOpen, high, low, newClose] }];
+        return [{ data: newData }];
+      });
+    }, 3000); // Atualiza o gráfico a cada 3 segundos
+
+    return () => clearInterval(interval);
+  }, [displayPrice]);
+  
+  return (
+    <main style={{ minHeight: '100vh', backgroundColor: '#0b0e11', color: '#eaecef', padding: '10px', fontFamily: 'Inter, sans-serif' }}>
+      <nav style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 20px', alignItems: 'center' }}>
+        <h2 style={{ color: '#F3BA2F', margin: 0 }}>GBIT <span style={{color:'white'}}>PRO</span></h2>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+          {isConnected && (
+            <span style={{ fontSize: '0.8rem', color: '#848e9c', backgroundColor: '#1e2329', padding: '5px 10px', borderRadius: '4px' }}>
+              ID: {address?.slice(0,6)}...{address?.slice(-4)}
+            </span>
+          )}
+          <ConnectButton accountStatus="address" showBalance={false} />
+        </div>
+      </nav>
+
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: '15px', marginTop: '10px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+          <div style={{ backgroundColor: '#161a1e', padding: '15px', borderRadius: '8px', border: '1px solid #2b3139' }}>
+            <div style={{ display: 'flex', gap: '30px', marginBottom: '15px' }}>
+              <div>
+                <div style={{color:'#848e9c', fontSize: '0.75rem'}}>PREÇO GBIT/USD</div>
+                <div style={{color:'#0ecb81', fontSize: '1.4rem', fontWeight: 'bold'}}>${displayPrice.toFixed(2)}</div>
+              </div>
+              <div>
+                <div style={{color:'#848e9c', fontSize: '0.75rem'}}>REDE ATUAL</div>
+                <div style={{color:'#F3BA2F', fontSize: '1.4rem'}}>SEPOLIA</div>
+              </div>
+            </div>
+            <Chart 
+              options={{ 
+                chart: { type: 'candlestick', toolbar: {show:false}, background: 'transparent' },
+                xaxis: { type: 'datetime', labels: {style:{colors:'#5e6673'}} },
+                yaxis: { labels: {style:{colors:'#5e6673'}, formatter: (v) => v.toFixed(2)} },
+                grid: { borderColor: '#2b3139' },
+                theme: { mode: 'dark' }
+              }} 
+              series={series} type="candlestick" height="380px" 
+            />
+          </div>
+
+          <div style={{ backgroundColor: '#161a1e', padding: '15px', borderRadius: '8px' }}>
+            <div style={{ color: '#848e9c', fontSize: '0.8rem', marginBottom: '10px', fontWeight: 'bold' }}>HISTÓRICO DE REDE (SEPOLIA)</div>
+            {logs.length === 0 && <div style={{color:'#5e6673', fontSize:'0.8rem'}}>Aguardando transações...</div>}
+            {logs.map((log, i) => (
+              <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid #2b3139', fontSize: '0.85rem' }}>
+                <span style={{ color: '#0ecb81' }}>{log.msg}</span>
+                <span style={{ color: '#5e6673' }}>{log.time}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <aside style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+          <div style={{ backgroundColor: '#1e2329', padding: '20px', borderRadius: '8px', border: '1px solid #0ecb81' }}>
+            <div style={{ color: '#848e9c', fontSize: '0.75rem', fontWeight: 'bold' }}>SEU SALDO EM GBIT</div>
+            <h2 style={{ margin: '10px 0', fontSize: '1.8rem' }}>{safeGbit} GBIT</h2>
+            <div style={{ color: '#0ecb81', fontSize: '0.85rem', fontWeight: '500' }}>
+              {userEth} ETH Disponível
+            </div>
+          </div>
+
+          <div style={{ backgroundColor: '#161a1e', padding: '20px', borderRadius: '8px', border: '1px solid #2b3139' }}>
+            <div style={{ color: '#848e9c', fontSize: '0.75rem', fontWeight: 'bold' }}>LIQUIDEZ NO CONTRATO</div>
+            <h2 style={{ margin: '10px 0', color: '#F3BA2F', fontSize: '1.8rem' }}>{contractLiquidity} ETH</h2>
+            <div style={{ color: '#5e6673', fontSize: '0.85rem' }}>TVL na Sepolia Testnet</div>
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <button 
+              onClick={handleBuy} 
+              disabled={isPending || !isConnected} 
+              style={{ padding: '18px', backgroundColor: isConnected ? '#0ecb81' : '#2b3139', color: '#0b0e11', border: 'none', borderRadius: '4px', fontWeight: 'bold', cursor: isConnected ? 'pointer' : 'not-allowed', fontSize: '1rem' }}
+            >
+              {isPending ? "PROCESSANDO..." : "COMPRAR (0.002 ETH)"}
+            </button>
+
+            <button 
+              onClick={handleSell} 
+              disabled={isPending || !isConnected} 
+              style={{ padding: '18px', backgroundColor: isConnected ? '#f6465d' : '#2b3139', color: 'white', border: 'none', borderRadius: '4px', fontWeight: 'bold', cursor: isConnected ? 'pointer' : 'not-allowed', fontSize: '1rem' }}
+            >
+              {isPending ? "PROCESSANDO..." : "VENDER (0.5 GBIT)"}
+            </button>
+            <div style={{ textAlign: 'center', fontSize: '0.7rem', color: '#5e6673' }}>
+              Taxas de rede (Gas) aplicáveis pela Sepolia
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+  );
+}
