@@ -13,6 +13,9 @@ Foundry consists of:
 
 https://book.getfoundry.sh/
 
+<img width="1345" height="589" alt="image" src="https://github.com/user-attachments/assets/398d04b0-b409-43d0-af31-667d89cfed4f" />
+
+
 ## Usage
 
 ### Build
