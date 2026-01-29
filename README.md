@@ -1,3 +1,35 @@
+# 🚀 GBIT PRO - Web3 Fullstack Framework
+
+Bem-vindo ao **GBIT PRO**, um ecossistema descentralizado de alta performance construído com a visão do **Web3Forge**. Este projeto combina Smart Contracts auditáveis, uma interface DeFi moderna e uma CLI de administração poderosa.
+
+🌍 **Site Oficial:** [https://my-web3-app-web.vercel.app/](https://my-web3-app-web.vercel.app/)
+
+---
+
+## 🛠️ Stack Tecnológica
+
+- **Smart Contracts:** Solidity & Foundry (Forge/Cast)
+- **Frontend:** Next.js 15 (Turbopack), Wagmi, Viem & RainbowKit
+- **Infraestrutura:** pnpm Workspaces (Monorepo)
+- **Deploy:** Vercel (Web) & Sepolia Testnet (Blockchain)
+
+---
+
+## 💻 Comandos CLI (O Coração do Projeto)
+
+Este projeto foi desenhado para evitar trabalho repetitivo. Abaixo estão os comandos principais que gerenciam o ciclo de vida da aplicação.
+
+### 🏗️ Desenvolvimento & Contratos (Foundry)
+```bash
+# Compilar os contratos
+forge build
+
+# Deploy do GbitToken na Sepolia
+forge create src/GbitToken.sol:GbitToken \
+  --rpc-url $SEPOLIA_RPC_URL \
+  --private-key $PRIVATE_KEY \
+  --broadcast
+
 ## Projeto  smart contract  token testnet sepolia anvil  hardhat   
 atencao!!!  nao use chaves  reais  para testes,  esse projeto  e para teste  apenas saldo ficticio  
 
