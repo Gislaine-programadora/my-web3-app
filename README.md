@@ -1,3 +1,6 @@
+## Projeto  smart contract  token testnet sepolia anvil  hardaht  
+atencao!!!  nao use chaves  reais  para tetes,  esse projeto  e para teste  apenas saldo ficticio  
+
 ## Foundry
 
 **Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
@@ -52,9 +55,11 @@ pnpm dev
 
 https://book.getfoundry.sh/
 
+---
+
 <img width="1345" height="589" alt="image" src="https://github.com/user-attachments/assets/398d04b0-b409-43d0-af31-667d89cfed4f" />
 
-
+---
 ## Usage
 
 ### Build
