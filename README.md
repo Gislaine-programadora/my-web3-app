@@ -48,6 +48,7 @@ Foundry consists of:
 # ⚡ Web3Forge: The High-Velocity Web3 Stack
 
 **Web3Forge** é um framework full-stack opinativo, projetado para levar desenvolvedores do "zero ao Mainnet" com a maior eficiência possível. Esqueça configurações manuais de ABIs, hooks complexos e ambientes de teste lentos.
+```
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/seu-usuario/web3forge/ci.yml)](https://github.com)
@@ -65,6 +66,7 @@ O desenvolvimento Web3 atual é fragmentado. O Web3Forge resolve isso unificando
 - ⚡ **Turbo-Speed:** Testes em Rust via Foundry e Hot Reload no Frontend com Next.js 15.
 
 ## 🛠️ Tech Stack
+``
 
 - **Contracts:** [Foundry](https://book.getfoundry.sh/) (Solidity, Rust-speed testing)
 - **Frontend:** [Next.js 15+](https://nextjs.org/) (App Router, Server Components)
