@@ -1,5 +1,5 @@
 ## Projeto  smart contract  token testnet sepolia anvil  hardhat   
-atencao!!!  nao use chaves  reais  para tetes,  esse projeto  e para teste  apenas saldo ficticio  
+atencao!!!  nao use chaves  reais  para testes,  esse projeto  e para teste  apenas saldo ficticio  
 
 ## Foundry
 
