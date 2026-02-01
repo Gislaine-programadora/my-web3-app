@@ -1,4 +1,62 @@
- ![Web3 GBIT Logo](web3-gbit-logo.svg)
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fundo gradiente azul neon -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#001122;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#003366;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00FFFF;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#0080FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00FFFF;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Retângulo de fundo -->
+  <rect width="100%" height="100%" fill="url(#bgGradient)" />
+  
+  <!-- Elementos cripto: cadeias de blocos estilizadas -->
+  <g transform="translate(50, 50)">
+    <circle cx="0" cy="0" r="10" fill="#00FFFF" opacity="0.8" />
+    <circle cx="30" cy="0" r="10" fill="#00FFFF" opacity="0.8" />
+    <circle cx="60" cy="0" r="10" fill="#00FFFF" opacity="0.8" />
+    <line x1="10" y1="0" x2="20" y2="0" stroke="#00FFFF" stroke-width="2" />
+    <line x1="40" y1="0" x2="50" y2="0" stroke="#00FFFF" stroke-width="2" />
+    
+    <circle cx="0" cy="30" r="10" fill="#00FFFF" opacity="0.8" />
+    <circle cx="30" cy="30" r="10" fill="#00FFFF" opacity="0.8" />
+    <circle cx="60" cy="30" r="10" fill="#00FFFF" opacity="0.8" />
+    <line x1="0" y1="20" x2="0" y2="10" stroke="#00FFFF" stroke-width="2" />
+    <line x1="30" y1="20" x2="30" y2="10" stroke="#00FFFF" stroke-width="2" />
+    <line x1="60" y1="20" x2="60" y2="10" stroke="#00FFFF" stroke-width="2" />
+  </g>
+  
+  <!-- Ícone de smart contract (contrato estilizado) -->
+  <g transform="translate(150, 100)">
+    <rect x="0" y="0" width="80" height="50" fill="none" stroke="#00FFFF" stroke-width="3" rx="5" />
+    <text x="40" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#00FFFF">SC</text>
+  </g>
+  
+  <!-- Texto principal -->
+  <text x="400" y="150" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="url(#textGradient)" text-anchor="middle">Web3 GBIT</text>
+  <text x="400" y="200" font-family="Arial, sans-serif" font-size="32" fill="#00FFFF" text-anchor="middle">CLI Smart-Contract</text>
+  
+  <!-- Subtítulo -->
+  <text x="400" y="250" font-family="Arial, sans-serif" font-size="18" fill="#FFFFFF" text-anchor="middle">Blockchain-Powered | Decentralized Tool</text>
+  
+  <!-- Elementos decorativos modernos -->
+  <g transform="translate(600, 50)">
+    <polygon points="0,0 20,10 0,20" fill="#00FFFF" opacity="0.6" />
+    <polygon points="30,0 50,10 30,20" fill="#00FFFF" opacity="0.6" />
+    <polygon points="60,0 80,10 60,20" fill="#00FFFF" opacity="0.6" />
+  </g>
+  
+  <!-- Linha divisória -->
+  <line x1="50" y1="320" x2="750" y2="320" stroke="#00FFFF" stroke-width="2" />
+  
+  <!-- Rodapé -->
+  <text x="400" y="350" font-family="Arial, sans-serif" font-size="14" fill="#FFFFFF" text-anchor="middle">🚀 Ready for Production | Secure & Efficient</text>
+</svg>
           
           
           
