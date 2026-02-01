@@ -1,3 +1,6 @@
+  <img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/6739f93f-7b19-4e56-9af3-202345cbe3dd" />
+
+
 # 🚀 GBIT PRO - Web3 Fullstack Framework
 
 Bem-vindo ao **GBIT PRO**, um ecossistema descentralizado de alta performance construído com a visão do **Web3Forge**. Este projeto combina Smart Contracts auditáveis, uma interface DeFi moderna e uma CLI de administração poderosa.
