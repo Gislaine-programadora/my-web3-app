@@ -1,8 +1,9 @@
-          🚀 GBIT PRO - Web3 Fullstack Framework  Smart-contract
+          🚀 GBIT PRO - Web3 Fullstack Framework  Smart-contract com froundry
          
       
          
-   <img width="324" height="324" alt="image" src="https://github.com/user-attachments/assets/93ee44f1-08fd-4ce7-8775-5e97ed95c6ad" />
+   <img width="424" height="324" alt="image" src="https://github.com/user-attachments/assets/10649ace-2263-4aa1-b79a-0581a3fb638a" />
+
 
 
 Bem-vindo ao **GBIT PRO**, um ecossistema descentralizado de alta performance construído com a visão do **Web3Forge**. Este projeto combina Smart Contracts auditáveis, uma interface DeFi moderna e uma CLI de administração poderosa.
