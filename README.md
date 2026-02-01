@@ -1,4 +1,4 @@
-  <img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/6739f93f-7b19-4e56-9af3-202345cbe3dd" />
+  <img width="724" height="724" alt="image" src="https://github.com/user-attachments/assets/6739f93f-7b19-4e56-9af3-202345cbe3dd" />
 
 
 # 🚀 GBIT PRO - Web3 Fullstack Framework
