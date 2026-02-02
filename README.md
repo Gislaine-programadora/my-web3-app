@@ -12,10 +12,11 @@
       
          
    <img width="324" height="324" alt="image" src="https://github.com/user-attachments/assets/10649ace-2263-4aa1-b79a-0581a3fb638a" />
-       [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-      [![Build Status](https://img.shields.io/github/actions/workflow/status/seu-usuario/web3forge/ci.yml)](https://github.com)
-      [![Foundry](https://img.shields.io/badge/Built%20with-Foundry-FFDB1C.svg)](https://book.getfoundry.sh/)
-
+  
+   ``
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/seu-usuario/web3forge/ci.yml)](https://github.com)
+[![Foundry](https://img.shields.io/badge/Built%20with-Foundry-FFDB1C.svg)](https://book.getfoundry.sh/)
 
 
 Bem-vindo ao **GBIT PRO**, um ecossistema descentralizado de alta performance construído com a visão do **Web3Forge**. Este projeto combina Smart Contracts auditáveis, uma interface DeFi moderna e uma CLI de administração poderosa.
