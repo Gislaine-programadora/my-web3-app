@@ -23,7 +23,18 @@ Bem-vindo ao **GBIT PRO**, um ecossistema descentralizado de alta performance co
 🌍 **Site Oficial:** [https://my-web3-app-web.vercel.app/](https://my-web3-app-web.vercel.app/)
 
 ---
+  # INICIA SUA APLICACAO  GERANDO  PASTA PRONTA PARA SEU PROJETO SMART CONTYRACT:
 
+    ```
+  WEB3FORGE "MEU-PROJECT"
+  ```
+
+  <img width="509" height="186" alt="image" src="https://github.com/user-attachments/assets/58ebf03e-4248-479f-873c-f4d89d0301ec" />
+
+
+
+
+  
 ## 🛠️ Stack Tecnológica
 
 - **Smart Contracts:** Solidity & Foundry (Forge/Cast)
