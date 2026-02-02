@@ -27,12 +27,12 @@ Bem-vindo ao **GBIT PRO**, um ecossistema descentralizado de alta performance co
 ---
   
   
-  WEB3FORGE "MEU-PROJECT"
+         web3forge "MEU-PROJECT"
   ```
 ---
-  <img width="509" height="186" alt="image" src="https://github.com/user-attachments/assets/58ebf03e-4248-479f-873c-f4d89d0301ec" />
-
-
+  
+```
+<img width="507" height="191" alt="image" src="https://github.com/user-attachments/assets/bf7e6004-e974-4cdc-b8c0-a4cd7b44915a" />
 
 
   
