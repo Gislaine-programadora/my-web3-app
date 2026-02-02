@@ -26,12 +26,12 @@ Bem-vindo ao **GBIT PRO**, um ecossistema descentralizado de alta performance co
   # INICIA SUA APLICACAO  GERANDO  PASTA PRONTA PARA SEU PROJETO SMART CONTYRACT:
 ---
   
-  
+  ---
          web3forge "MEU-PROJECT"
-  ```
+        
 ---
   
-```
+``
 <img width="507" height="191" alt="image" src="https://github.com/user-attachments/assets/bf7e6004-e974-4cdc-b8c0-a4cd7b44915a" />
 
 
