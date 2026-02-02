@@ -1,3 +1,7 @@
+ <img width="324" height="324" alt="image" src="https://github.com/user-attachments/assets/10649ace-2263-4aa1-b79a-0581a3fb638a" />
+  [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Foundry](https://img.shields.io/badge/Built%20with-Foundry-FFDB1C.svg)](https://book.getfoundry.sh/)
+  
   <img width="546" height="81" alt="image" src="https://github.com/user-attachments/assets/35a5bc08-c435-4a1b-9401-ea5799a7ee5a" />
 
  
@@ -23,8 +27,8 @@ Bem-vindo ao **GBIT PRO**, um ecossistema descentralizado de alta performance co
 🌍 **Site Oficial:** [https://my-web3-app-web.vercel.app/](https://my-web3-app-web.vercel.app/)
 
 ---
-  # INICIA SUA APLICACAO  GERANDO  PASTA PRONTA PARA SEU PROJETO SMART CONTYRACT:
----
+  # INICIA SUA APLICACAO  GERANDO  PASTA PRONTA PARA SEU PROJETO SMART CONTRACT:
+
   
   ---
          web3forge "MEU-PROJECT"
