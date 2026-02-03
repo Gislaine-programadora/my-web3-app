@@ -1,6 +1,8 @@
   <img width="546" height="81" alt="image" src="https://github.com/user-attachments/assets/35a5bc08-c435-4a1b-9401-ea5799a7ee5a" />
       
-      # Web3 GBIT CLI Smart-Contract
+      # web3forge "my-project"
+      
+      Web3 GBIT CLI Smart-Contract
   Web3 Fullstack Framework  Smart-contract com froundry:
   
    
