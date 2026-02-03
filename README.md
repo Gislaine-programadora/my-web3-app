@@ -6,8 +6,6 @@
    
    <img width="324" height="324" alt="image" src="https://github.com/user-attachments/assets/10649ace-2263-4aa1-b79a-0581a3fb638a" />
 
- ``
-
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Next.js](https://img.shields.io/badge/Next.js-16.1.6-black?logo=next.js)](https://nextjs.org/)
 [![Web3GBIT CLI](https://img.shields.io/badge/Web3GBIT--CLI-Turma%20dos%2010-orange?logo=express)](https://github.com/Gislaine-programadora/projeto-web3-cli-deploy)
@@ -17,12 +15,7 @@
 [![Package Manager](https://img.shields.io/badge/pnpm-8.15.0-orange?logo=pnpm)](https://pnpm.io/)
 [![NPM Version](https://img.shields.io/badge/npm-v1.0.0-cb3837?logo=npm)](https://www.npmjs.com/)
 
-     # Web3 GBIT CLI Smart-Contract
-  Web3 Fullstack Framework  Smart-contract com froundry:
-  
-  
-  <img width="546" height="81" alt="image" src="https://github.com/user-attachments/assets/35a5bc08-c435-4a1b-9401-ea5799a7ee5a" />
-  
+     
    ``
 ### 🚀 Tech Stack
 
