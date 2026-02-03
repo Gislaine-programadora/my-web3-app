@@ -24,7 +24,7 @@
 | **Frontend** | Next.js 16 (Turbopack) | `EM OPERAÇÃO` |
 | **Blockchain** | Solidity & Foundry | `AUDITADO` |
 | **Conectividade** | RainbowKit & Wagmi | `ESTÁVEL` |
-| **Ferramentas** | GBIT-CLI (Turma dos 10) | `ATIVO` |
+| **Ferramentas** | GBIT-CLI (10 comandos prontinhos) | `ATIVO` |
 | **Gerenciador** | PNPM Workspaces | `OTIMIZADO` |
 
 
