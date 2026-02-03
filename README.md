@@ -21,7 +21,15 @@
   <img width="546" height="81" alt="image" src="https://github.com/user-attachments/assets/35a5bc08-c435-4a1b-9401-ea5799a7ee5a" />
   
    ``
+### 🚀 Tech Stack
 
+| Camada | Tecnologia | Status |
+| :--- | :--- | :--- |
+| **Frontend** | Next.js 16 (Turbopack) | `EM OPERAÇÃO` |
+| **Blockchain** | Solidity & Foundry | `AUDITADO` |
+| **Conectividade** | RainbowKit & Wagmi | `ESTÁVEL` |
+| **Ferramentas** | GBIT-CLI (Turma dos 10) | `ATIVO` |
+| **Gerenciador** | PNPM Workspaces | `OTIMIZADO` |
 
 
 Bem-vindo ao **GBIT PRO**, um ecossistema descentralizado de alta performance construído com a visão do **Web3Forge**. Este projeto combina Smart Contracts auditáveis, uma interface DeFi moderna e uma CLI de administração poderosa.
@@ -52,6 +60,14 @@ Bem-vindo ao **GBIT PRO**, um ecossistema descentralizado de alta performance co
 ---
 
 ## 💻 Comandos CLI (O Coração do Projeto)
+
+## 🛠️ CLI Management
+
+O ecossistema conta com um CLI exclusivo para gerenciamento de liquidez e deploy automatizado.
+
+* **Status Check**: Monitoramento em tempo real do Rate e Supply.
+* **Deployer**: Script automatizado para múltiplas redes (Sepolia/Mainnet).
+* **Market Maker**: Bot integrado para simulação de mercado.
 
 Este projeto foi desenhado para evitar trabalho repetitivo. Abaixo estão os comandos principais que gerenciam o ciclo de vida da aplicação.
 
