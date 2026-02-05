@@ -1,6 +1,6 @@
   <img width="546" height="81" alt="image" src="https://github.com/user-attachments/assets/35a5bc08-c435-4a1b-9401-ea5799a7ee5a" />
       
-       web3forge "my-project"
+      pnpm web3forge "my-project"
     
    ##   Web3 GBIT CLI Smart-Contract
       
@@ -19,7 +19,11 @@
 [![NPM Version](https://img.shields.io/badge/npm-v1.0.0-cb3837?logo=npm)](https://www.npmjs.com/)
 
      
-   ``
+ 
+  ``
+
+  <img width="611" height="366" alt="image" src="https://github.com/user-attachments/assets/aa5762bf-921e-4c92-ac90-f582725cf3fa" />
+
 ### 🚀 Tech Stack
 
 | Camada | Tecnologia | Status |
