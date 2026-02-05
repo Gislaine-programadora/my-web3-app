@@ -38,10 +38,10 @@
 ```
    
 ```bash
-     web3gbit status
+    pnpm web3gbit status
 ```  
 
-  "tabela de comando" para consulta rápida: WEB3GBIT "my-comand"
+  "tabela de comando" para consulta rápida: web3gbit "my-comand"
 
   <img width="611" height="366" alt="image" src="https://github.com/user-attachments/assets/aa5762bf-921e-4c92-ac90-f582725cf3fa" />
 
