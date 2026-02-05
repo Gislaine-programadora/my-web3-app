@@ -21,6 +21,17 @@
      
  
   ``
+  ##  PARA INSTALACAO 
+
+  ```bash
+     pnpm install -g web3gbit
+```
+   
+```bash
+     web3gbit status
+```  
+
+  "tabela de comando" para consulta rápida: WEB3GBIT "my-comand"
 
   <img width="611" height="366" alt="image" src="https://github.com/user-attachments/assets/aa5762bf-921e-4c92-ac90-f582725cf3fa" />
 
