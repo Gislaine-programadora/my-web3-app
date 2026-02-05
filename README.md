@@ -18,15 +18,14 @@
 [![Package Manager](https://img.shields.io/badge/pnpm-8.15.0-orange?logo=pnpm)](https://pnpm.io/)
 [![NPM Version](https://img.shields.io/badge/npm-v1.0.0-cb3837?logo=npm)](https://www.npmjs.com/)
 
----
-    ## Inicia Seu Projeto para foundry  # INICIA SUA APLICACAO  GERANDO  PASTA PRONTA PARA SEU PROJETO SMART CONTRACT:
+  ``
+  ##  INICIA SEU PROJETO SMART CONTRACT UNANDO O FOUNDRY:
 
-    ```bash
-    pnpm web3forge "my-project"
-    ```
+  ```bash
+     pnpm web3forge "my-project"
+```
+   
 
-
-       ``
 <img width="507" height="191" alt="image" src="https://github.com/user-attachments/assets/bf7e6004-e974-4cdc-b8c0-a4cd7b44915a" />
 
  
