@@ -19,7 +19,7 @@
 [![NPM Version](https://img.shields.io/badge/npm-v1.0.0-cb3837?logo=npm)](https://www.npmjs.com/)
 
   ``
-  ##  INICIA SEU PROJETO SMART CONTRACT UNANDO O FOUNDRY:
+  ##  INICIA SEU PROJETO SMART CONTRACT USANDO O FOUNDRY:
 
   ```bash
      pnpm web3forge "my-project"
@@ -30,7 +30,7 @@
 
  
   ``
-  ##  PARA INSTALACAO, COMANDOS PARA INTERAGIR COM O SMART CONTRATO:
+  ##   COMANDOS PARA INTERAGIR COM O SMART CONTRATO:
 
   ```bash
      pnpm install -g web3gbit
