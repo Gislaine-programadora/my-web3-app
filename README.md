@@ -18,7 +18,7 @@
 [![Package Manager](https://img.shields.io/badge/pnpm-8.15.0-orange?logo=pnpm)](https://pnpm.io/)
 [![NPM Version](https://img.shields.io/badge/npm-v1.0.0-cb3837?logo=npm)](https://www.npmjs.com/)
 
----
+```
     ## Inicia Seu Projeto para foundry  # INICIA SUA APLICACAO  GERANDO  PASTA PRONTA PARA SEU PROJETO SMART CONTRACT:
 
     ```bash
@@ -31,7 +31,7 @@
 
  
   ``
-  ##  PARA INSTALACAO, COMANDOS PARA INTERAGIR COM O CONTRACTO:
+  ##  PARA INSTALACAO, COMANDOS PARA INTERAGIR COM O SMART CONTRATO:
 
   ```bash
      pnpm install -g web3gbit
