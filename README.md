@@ -1,6 +1,6 @@
   <img width="546" height="81" alt="image" src="https://github.com/user-attachments/assets/35a5bc08-c435-4a1b-9401-ea5799a7ee5a" />
       
-      pnpm web3forge "my-project"
+    
     
    ##   Web3 GBIT CLI Smart-Contract
       
@@ -18,7 +18,8 @@
 [![Package Manager](https://img.shields.io/badge/pnpm-8.15.0-orange?logo=pnpm)](https://pnpm.io/)
 [![NPM Version](https://img.shields.io/badge/npm-v1.0.0-cb3837?logo=npm)](https://www.npmjs.com/)
 
-    ## Inicia Seu Projeto para foundry
+---
+    ## Inicia Seu Projeto para foundry  # INICIA SUA APLICACAO  GERANDO  PASTA PRONTA PARA SEU PROJETO SMART CONTRACT:
 
     ```bash
     pnpm web3forge "my-project"
@@ -58,18 +59,6 @@
 Bem-vindo ao **GBIT PRO**, um ecossistema descentralizado de alta performance construído com a visão do **Web3Forge**. Este projeto combina Smart Contracts auditáveis, uma interface DeFi moderna e uma CLI de administração poderosa.
 
 🌍 **Site Oficial:** [https://my-web3-app-web.vercel.app/](https://my-web3-app-web.vercel.app/)
-
----
-  # INICIA SUA APLICACAO  GERANDO  PASTA PRONTA PARA SEU PROJETO SMART CONTRACT:
-
-  
-  ---
-         web3forge "MEU-PROJECT"
-        
----
-  
-``
-<img width="507" height="191" alt="image" src="https://github.com/user-attachments/assets/bf7e6004-e974-4cdc-b8c0-a4cd7b44915a" />
 
 
   
