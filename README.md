@@ -3,7 +3,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Next.js](https://img.shields.io/badge/Next.js-16.1.6-black?logo=next.js)](https://nextjs.org/)
-[![Web3GBIT CLI](https://img.shields.io/badge/Web3GBIT--CLI-Turma%20dos%2010-orange?logo=express)](https://github.com/Gislaine-programadora/projeto-web3-cli-deploy)
+[![Web3GBIT CLI](https://img.shields.io/badge/Web3GBIT--CLI-comandos%20dos%2010-orange?logo=express)](https://github.com/Gislaine-programadora/projeto-web3-cli-deploy)
 [![Smart Contract](https://img.shields.io/badge/Smart--Contract-Solidity-363636?logo=solidity)](https://soliditylang.org/)
 [![Built with Foundry](https://img.shields.io/badge/Built%20with-Foundry-FFDE00?logo=foundry)](https://book.getfoundry.sh/)
 [![Forge](https://img.shields.io/badge/Forge-Testing-red)](https://book.getfoundry.sh/forge/)
