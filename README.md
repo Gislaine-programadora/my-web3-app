@@ -23,7 +23,7 @@
   ##  INICIA SEU PROJETO SMART CONTRACT USANDO O FOUNDRY:
 
   ```bash
-     pnpm web3forge "my-project"
+     pnpm web3gbit-forge "my-project"
 ```
    
 
