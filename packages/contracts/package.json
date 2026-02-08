@@ -1,0 +1,17 @@
+{
+  "name": "web3gbit",
+  "version": "1.0.0",
+  "type": "module",
+  "bin": {
+    "web3gbit": "./admin-cli.ts"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "viem": "^2.22.17"
+  },
+  "devDependencies": {
+    "@types/node": "^25.2.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}

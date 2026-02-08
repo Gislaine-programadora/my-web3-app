@@ -1,30 +1,43 @@
 {
-  "name": "my-web3-app",
+  "name": "create-web3gbit-forge",
   "version": "1.0.0",
   "type": "module",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "pnpm --filter web dev",
-    "build:all": "cd packages/contracts && forge build && cd ../.. && wagmi generate",
-    "deploy:local": "pnpm build:all && forge create src/Guestbook.sol:Guestbook --rpc-url http://127.0.0.1:8545 --private-key 0x2a871d0798f97d79848a013d4936a73bf4cc922c825d33c1cf7073dff6d409c6 --broadcast"
+  "bin": {
+    "create-web3gbit-forge": "./web3forge.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.28.0",
+  "scripts": {
+    "dev": "pnpm --filter web dev",
+    "// --- COMANDO DA CLI --- //": "",
+    "build:cli": "tsc web3forge.ts --module nodenext --target esnext --moduleResolution nodenext --esModuleInterop --skipLibCheck",
+    "link:cli": "pnpm build:cli && pnpm link --global",
+    "// --- PROJETO --- //": "",
+    "build:all": "cd packages/contracts && forge build && cd ../.. && wagmi generate",
+    "// --- DEPLOYS --- //": "",
+    "deploy:local": "pnpm build:all && forge create src/GbitToken.sol:GbitToken --rpc-url http://127.0.0.1:8545 --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 --broadcast",
+    "deploy:sepolia": "source .env && forge create src/GbitToken.sol:GbitToken --rpc-url $RPC_URL_SEPOLIA --private-key $PRIVATE_KEY --verify --etherscan-api-key $ETHERSCAN_API_KEY --broadcast",
+    "deploy:mainnet": "source .env && forge create src/GbitToken.sol:GbitToken --rpc-url $RPC_URL_MAINNET --private-key $PRIVATE_KEY --verify --etherscan-api-key $ETHERSCAN_API_KEY --broadcast",
+    "deploy:base-sepolia": "source .env && forge create src/GbitToken.sol:GbitToken --rpc-url $RPC_BASE_SEPOLIA --private-key $PRIVATE_KEY --verify --optimizer-runs 200 --broadcast",
+    "deploy:amoy": "source .env && forge create src/GbitToken.sol:GbitToken --rpc-url $RPC_AMOY --private-key $PRIVATE_KEY --verify --verifier-url https://api-amoy.polygonscan.com/api --etherscan-api-key $POLYGONSCAN_API_KEY --optimizer-runs 200 --broadcast",
+    "deploy:polygon": "source .env && forge create src/GbitToken.sol:GbitToken --rpc-url $RPC_POLYGON --private-key $PRIVATE_KEY --verify --verifier-url https://api.polygonscan.com/api --etherscan-api-key $POLYGONSCAN_API_KEY --optimizer-runs 200 --broadcast"
+  },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^6.1.0",
     "@nomicfoundation/hardhat-verify": "^3.0.8",
     "@types/node": "25.0.9",
     "@wagmi/cli": "^2.8.0",
-    "dotenv": "^17.2.3"
+    "dotenv": "^17.2.3",
+    "typescript": "^5.0.0"
   },
   "dependencies": {
+    "@metamask/sdk": "0.34.0",
     "@rainbow-me/rainbowkit": "^2.2.10",
     "@tanstack/react-query": "^5.90.19",
+    "next": "16.1.6",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
     "viem": "^2.44.4",
-    "wagmi": "^3.3.2"
+    "wagmi": "^2.14.9",
+    "canvas-confetti": "^1.9.4",
+    "react-apexcharts": "^1.9.0"
   }
 }

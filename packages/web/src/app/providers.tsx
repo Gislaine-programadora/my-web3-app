@@ -1,7 +1,7 @@
 "use client";
 import { getDefaultConfig, RainbowKitProvider, darkTheme } from '@rainbow-me/rainbowkit';
 import { WagmiProvider } from 'wagmi';
-import { sepolia } from 'wagmi/chains';
+import { sepolia } from 'viem/chains'; // MUDANÇA AQUI
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { ReactNode, useState } from 'react';
 
@@ -10,7 +10,7 @@ export function Providers({ children }: { children: ReactNode }) {
 
   const config = getDefaultConfig({
     appName: 'GBIT PRO',
-    projectId: '488260acb5a86764b6c357db22a807d6', // Seu ID
+    projectId: '488260acb5a86764b6c357db22a807d6',
     chains: [sepolia],
     ssr: true,
   });
@@ -18,7 +18,7 @@ export function Providers({ children }: { children: ReactNode }) {
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
-        <RainbowKitProvider theme={darkTheme()}>
+        <RainbowKitProvider theme={darkTheme()} locale="pt-BR">
           {children}
         </RainbowKitProvider>
       </QueryClientProvider>

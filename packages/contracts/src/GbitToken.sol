@@ -5,7 +5,7 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract GbitToken is ERC20 {
     address public owner;
-    uint256 public rate = 23456; // Preço variável para o Trade
+    uint256 public rate = 23456; 
 
     event PriceUpdated(uint256 newRate);
     event TokensPurchased(address buyer, uint256 ethAmount, uint256 gbitAmount);
@@ -18,10 +18,21 @@ contract GbitToken is ERC20 {
 
     constructor() ERC20("Gbit Token", "GBIT") {
         owner = msg.sender;
-        _mint(msg.sender, 1000000 * 10**decimals()); // Reserva inicial para liquidez
+        _mint(msg.sender, 1000000 * 10**decimals()); 
     }
 
-    // Função para o CLI mudar o preço e fazer o gráfico subir/descer
+    // 🌟 NOVA FUNÇÃO MINT PROFISSIONAL
+    // Permite que a dona crie novos tokens para qualquer endereço
+    function mint(address to, uint256 amount) public onlyOwner {
+        _mint(to, amount);
+    }
+
+    // Função para trocar o dono do contrato (Caso você queira vender o projeto)
+    function transferOwnership(address newOwner) public onlyOwner {
+        require(newOwner != address(0), "Endereco invalido");
+        owner = newOwner;
+    }
+
     function setRate(uint256 _newRate) public onlyOwner {
         rate = _newRate;
         emit PriceUpdated(_newRate);
@@ -37,13 +48,14 @@ contract GbitToken is ERC20 {
         _mint(msg.sender, amountToMint);
         emit TokensPurchased(msg.sender, msg.value, amountToMint);
     }
+  
+    function burn(uint256 amount) public {
+        _burn(msg.sender, amount);
+    }
 
     function withdraw(uint256 amount) public {
         require(balanceOf(msg.sender) >= amount, "Saldo de GBIT insuficiente");
-
-        // Cálculo exato: (Quantidade / Rate)
         uint256 ethAmount = amount / rate;
-        
         require(address(this).balance >= ethAmount, "Contrato sem liquidez de ETH");
 
         _burn(msg.sender, amount);
@@ -53,7 +65,6 @@ contract GbitToken is ERC20 {
         emit TokensSold(msg.sender, amount, ethAmount);
     }
 
-    // Função de emergência para o dono resgatar ETH sobrando
     function rescueETH() public onlyOwner {
         payable(owner).transfer(address(this).balance);
     }
